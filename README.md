@@ -13,7 +13,7 @@ This Telegram bot uses the ChatGPT API to automatically generate SEO-friendly bl
 
 1. Clone this repository:
    ```
-   git clone https://github.com/yourusername/blog-writer-bot.git
+   git clone https://github.com/Speed10x/BlogWriterBot-AI
    cd blog-writer-bot
    ```
 
