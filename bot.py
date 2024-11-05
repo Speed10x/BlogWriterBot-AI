@@ -1,15 +1,16 @@
 import os
 import telebot
 from telebot.types import Message
-from openai import OpenAI
+import google.generativeai as genai
 from flask import Flask, request
 
-# Initialize bot, OpenAI client, and Flask app
+# Initialize bot, Gemini API, and Flask app
 TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')
-OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
+GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY')
 
 bot = telebot.TeleBot(TOKEN)
-openai_client = OpenAI(api_key=OPENAI_API_KEY)
+genai.configure(api_key=GEMINI_API_KEY)
+model = genai.GenerativeModel('gemini-pro')
 app = Flask(__name__)
 
 @bot.message_handler(commands=['start', 'help'])
@@ -22,17 +23,11 @@ def generate_blog(message: Message):
     bot.reply_to(message, f"Generating a blog article about '{topic}'. This may take a moment...")
 
     try:
-        # Generate blog content using ChatGPT
-        response = openai_client.chat.completions.create(
-            model="gpt-3.5-turbo",
-            messages=[
-                {"role": "system", "content": "You are an expert SEO-friendly blog writer."},
-                {"role": "user", "content": f"Write a comprehensive, SEO-optimized blog article about {topic}. Include a catchy title, introduction, main content with subheadings, and a conclusion."}
-            ],
-            max_tokens=1000
-        )
+        # Generate blog content using Gemini
+        prompt = f"Write a comprehensive, SEO-optimized blog article about {topic}. Include a catchy title, introduction, main content with subheadings, and a conclusion."
+        response = model.generate_content(prompt)
 
-        blog_content = response.choices[0].message.content
+        blog_content = response.text
 
         # Send the generated blog content to the user
         bot.send_message(message.chat.id, blog_content)
