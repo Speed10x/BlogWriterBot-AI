@@ -1,25 +1,32 @@
-# Enhanced Blog Writer Telegram Bot
+# Multi-Personality Telegram Bot
 
-This Telegram bot uses the Google Gemini API to generate various types of content, including SEO-friendly blog articles, general blog posts, and image descriptions. It also features interactive chat capabilities and admin commands.
+This Telegram bot uses the Google Gemini API to provide multiple functionalities, including SEO-optimized blog post generation, a virtual girlfriend experience, and general chat capabilities.
 
 ## Features
 
-- Generates SEO-optimized blog articles
-- Creates general blog posts
-- Provides image descriptions (for potential image generation)
-- Interactive chat functionality
-- Button interface for easy content generation
-- Admin-only commands
-- Uses Google's Gemini-Pro model
-- Easy to use Telegram interface
-- Deployable on Render
+1. SEO Blog Post Generation Mode:
+   - Generates high-quality, SEO-optimized blog posts based on user-provided topics
+   - Performs keyword density checks and readability analysis
+   - Provides SEO reports with suggestions for improvement
+
+2. Virtual Girlfriend Mode:
+   - Simulates a friendly, engaging companion using casual language
+   - Provides supportive messages and friendly conversations
+
+3. General Chat Mode:
+   - Offers regular conversational responses on various topics
+   - Provides information and answers questions
+
+4. Admin Commands:
+   - View bot usage statistics
+   - Access admin-only features
 
 ## Setup
 
 1. Clone this repository:
    ```
-   git clone https://github.com/Speed10x/BlogWriterBot-AI
-   cd enhanced-blog-writer-bot
+   git clone https://github.com/yourusername/multi-personality-bot.git
+   cd multi-personality-bot
    ```
 
 2. Install the required packages:
@@ -46,17 +53,18 @@ This Telegram bot uses the Google Gemini API to generate various types of conten
 ## Usage
 
 1. Start a chat with your bot on Telegram.
-2. Use the buttons to generate different types of content:
+2. Use the /start or /help command to get started.
+3. Choose a mode using the provided buttons:
    - SEO Blog Post
-   - General Blog Post
-   - Generate Image (description)
-3. Chat with the bot for general interactions.
-4. Admin can use special commands like /admin and /stats.
+   - Virtual Girlfriend
+   - General Chat
+4. Interact with the bot based on the selected mode.
+5. Use the /mode command to switch between modes at any time.
 
 ## Admin Commands
 
 - `/admin`: Access admin-only features
-- `/stats`: View bot usage statistics (placeholder)
+- `/stats`: View bot usage statistics
 
 ## Deployment on Render
 
@@ -72,6 +80,10 @@ This Telegram bot uses the Google Gemini API to generate various types of conten
    - `GEMINI_API_KEY` with your Google Gemini API key
    - `ADMIN_ID` with your Telegram user ID (for admin commands)
 6. Deploy the bot.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
