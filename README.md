@@ -25,7 +25,7 @@ This Telegram bot uses the Google Gemini API to provide multiple functionalities
 
 1. Clone this repository:
    ```
-   git clone https://github.com/yourusername/multi-personality-bot.git
+   git clone https://github.com/Speed10x/BlogWriterBot-AI
    cd multi-personality-bot
    ```
 
